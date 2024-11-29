@@ -1,2 +1,2 @@
 # Color_chooser
-Ez egy színválsaztó program
+Ez egy színválasztó program
