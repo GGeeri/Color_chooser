@@ -80,7 +80,7 @@ def check_answer(event=None):
     global best_time
     user_input = entry.get().strip().lower()
 
-    if user_input == dictt[current_color]:
+    if user_input == dictt[current_color] or user_input == current_color:
         elapsed_time = round(time.time() - start_time, 2)
         label_feedback.config(text="Helyes válasz!", fg="green")
 
