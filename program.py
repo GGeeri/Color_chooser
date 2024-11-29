@@ -99,9 +99,21 @@ def update_best_time():
     else:
         label_best_time.config(text=f"Legjobb eredmény: {round(best_time, 2)} másodperc")
 
+def stop_timer():
+    global current_color, correct_answer, start_time, timer_running
+    entry.delete(0, tk.END)  # Töröljük a beírt szöveget
+    label_feedback.config(text="")
+    timer_running = False
+    start_time = time.time()
+    update_timer()
+
+
 # Kezdés gomb
 start_button = tk.Button(root, text="Játék indítása", font=("Helvetica", 14), command=start_game)
 start_button.pack(pady=20)
+
+stop_button = tk.Button(root, text="Játék megállítása", font=("Helvetica", 14), command=stop_timer)
+stop_button.pack(pady=3)
 
 # A legjobb idő kiírása
 update_best_time()
