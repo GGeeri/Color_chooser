@@ -4,6 +4,18 @@ import time
 
 # Lista a színekhez
 colors = ['red', 'green', 'blue', 'yellow', 'pink', 'orange', 'purple', 'brown', 'black', 'gray']
+dictt={
+    "red": "piros",
+    "green": "zöld",
+    "blue": "kék",
+    "yellow":"sárga",
+    "pink":"rózsaszín",
+    "orange":"narancs",
+    "purple":"lila",
+    "brown":"barna",
+    "black":"fekete",
+    "gray":"szürke"
+}
 
 # Kezdő változók
 best_time = float('inf')
@@ -68,7 +80,7 @@ def check_answer(event=None):
     global best_time
     user_input = entry.get().strip().lower()
 
-    if user_input == current_color:
+    if user_input == dictt[current_color]:
         elapsed_time = round(time.time() - start_time, 2)
         label_feedback.config(text="Helyes válasz!", fg="green")
 
